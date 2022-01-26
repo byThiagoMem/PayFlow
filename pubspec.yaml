@@ -25,6 +25,10 @@ dependencies:
   google_sign_in: ^5.2.1
   shared_preferences: ^2.0.12
   animated_card: ^2.0.0
+  camera: ^0.8.1+3
+  google_ml_kit: ^0.7.3
+  image_picker: ^0.8.4+5
+
 
 dev_dependencies:
   flutter_test:

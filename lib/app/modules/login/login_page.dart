@@ -91,7 +91,7 @@ class LoginPageState extends State<LoginPage> {
                 ),
               ),
               Positioned(
-                top: constrains.maxHeight * .85,
+                top: constrains.maxHeight * .88,
                 child: SocialButton(
                   onTap: () => store.loginWithGoogle(),
                 ),

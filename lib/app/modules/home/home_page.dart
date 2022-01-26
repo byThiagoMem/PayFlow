@@ -74,7 +74,7 @@ class _HomePageState extends ModularState<HomePage, HomeStore> {
                       ),
                     ),
                     GestureDetector(
-                      onTap: () async {},
+                      onTap: store.goToBarcodeScannerPage,
                       child: Container(
                         width: 60,
                         height: 60,
