@@ -13,14 +13,14 @@ class TicketsTiles extends StatelessWidget {
           itemBuilder: (_, index) {
             return ListTile(
               contentPadding: EdgeInsets.zero,
-              title: 'Tia Maria'.heading17(),
+              title: 'Aluguel de Fevereiro'.heading17(),
               subtitle: Text.rich(
                 TextSpan(
                   text: 'Vence em ',
                   style: AppTheme.textStyles.heading13.copyWith(fontWeight: FontWeight.w400),
                   children: [
                     TextSpan(
-                      text: '16/03/21',
+                      text: '05/02/22',
                       style: AppTheme.textStyles.heading13.copyWith(fontWeight: FontWeight.w600),
                     ),
                   ],
@@ -32,7 +32,7 @@ class TicketsTiles extends StatelessWidget {
                   style: AppTheme.textStyles.heading15,
                   children: [
                     TextSpan(
-                      text: '2.131,33',
+                      text: '650,00',
                       style: AppTheme.textStyles.heading15.copyWith(fontWeight: FontWeight.bold),
                     ),
                   ],
