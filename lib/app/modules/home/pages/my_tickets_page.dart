@@ -22,7 +22,7 @@ class MyTicketsPage extends StatelessWidget {
           body: SingleChildScrollView(
             physics: const AlwaysScrollableScrollPhysics(),
             child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: constraints.maxWidth * .05),
+              padding: EdgeInsets.symmetric(horizontal: constraints.maxWidth * .06),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [

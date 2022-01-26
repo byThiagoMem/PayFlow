@@ -7,6 +7,7 @@ class TicketsInfo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: const EdgeInsets.symmetric(vertical: 15),
       decoration: BoxDecoration(
         color: AppTheme.colors.brandSecundary,
         borderRadius: BorderRadius.circular(5),

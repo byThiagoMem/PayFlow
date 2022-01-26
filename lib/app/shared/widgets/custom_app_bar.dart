@@ -1,3 +1,4 @@
+import 'package:animated_card/animated_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:pay_flow_flutter/app/modules/home/widgets/tickets_info.dart';
@@ -11,7 +12,7 @@ class CustomAppBar extends PreferredSize {
   CustomAppBar({Key? key, required this.size, required this.user, required this.isHome})
       : super(
           key: key,
-          preferredSize: Size(double.maxFinite, isHome ? size * .22 : size * .13),
+          preferredSize: Size(double.maxFinite, isHome ? size * .24 : size * .15),
           child: LayoutBuilder(
             builder: (context, constraints) {
               return Stack(
@@ -89,7 +90,10 @@ class CustomAppBar extends PreferredSize {
                           child: SizedBox(
                             width: constraints.maxWidth * .88,
                             height: constraints.maxHeight * .38,
-                            child: const TicketsInfo(),
+                            child: AnimatedCard(
+                              direction: AnimatedCardDirection.top,
+                              child: const TicketsInfo(),
+                            ),
                           ),
                         ),
                       ],

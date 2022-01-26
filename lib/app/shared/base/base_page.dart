@@ -3,8 +3,6 @@
 import 'package:flutter/material.dart';
 import 'package:pay_flow_flutter/app/shared/theme/app_theme.dart';
 
-enum ModalType { SUCCESS, ERROR, ACTION }
-
 class BasePage {
   static showLoading(BuildContext context) {
     return showDialog(
@@ -18,10 +16,7 @@ class BasePage {
 
   static showModal(
     BuildContext context, {
-    required ModalType type,
-    required String title,
-    required String subtitle,
-    VoidCallback? onTapAction,
+    VoidCallback? onTap,
   }) {
     return Container();
   }
