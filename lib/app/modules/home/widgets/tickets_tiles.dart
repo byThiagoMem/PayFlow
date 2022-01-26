@@ -38,6 +38,7 @@ class TicketsTiles extends StatelessWidget {
                   ],
                 ),
               ),
+              onTap: () {},
             );
           },
           itemCount: 10,

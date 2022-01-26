@@ -21,12 +21,18 @@ class ExtractPage extends StatelessWidget {
           body: SingleChildScrollView(
             physics: const AlwaysScrollableScrollPhysics(),
             child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: constraints.maxWidth * .05),
+              padding: EdgeInsets.symmetric(horizontal: constraints.maxWidth * .06),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const SizedBox(height: 20),
-                  'Meus boletos'.heading20(),
+                  const SizedBox(height: 25),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      'Meus extratos'.heading20(),
+                      '3 pagos'.heading13(),
+                    ],
+                  ),
                   const SizedBox(height: 10),
                   const Divider(thickness: 1),
                   const SizedBox(height: 5),
