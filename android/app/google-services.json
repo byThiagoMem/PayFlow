@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "282794492252",
+    "project_id": "payflow-e738d",
+    "storage_bucket": "payflow-e738d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:282794492252:android:f3ce8f11f94fe1d6f30199",
+        "android_client_info": {
+          "package_name": "com.example.pay_flow_flutter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "282794492252-2tdm5ksmvuipfltbd4038hb5cndd1gbo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.pay_flow_flutter",
+            "certificate_hash": "071d972af96ff7fb6386b5a56ea8371cb0cbbbdf"
+          }
+        },
+        {
+          "client_id": "282794492252-5p5a0en154pcjeusr840ippr4g29gd64.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAjej9hobmdGiph3i5P4hlhMBDqbSArYXI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "282794492252-5p5a0en154pcjeusr840ippr4g29gd64.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "282794492252-qen4ri60hus6s97ajbcghvsk154o7q08.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.payFlowFlutter"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

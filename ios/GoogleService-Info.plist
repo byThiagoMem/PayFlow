@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>282794492252-qen4ri60hus6s97ajbcghvsk154o7q08.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.282794492252-qen4ri60hus6s97ajbcghvsk154o7q08</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>282794492252-mi9k5lkjdc2cu2h6lvtmbsamkf05t2gk.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBocdPFno7XBMnc1_akJ-v92fkuQBKYm3Y</string>
+	<key>GCM_SENDER_ID</key>
+	<string>282794492252</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.payFlowFlutter</string>
+	<key>PROJECT_ID</key>
+	<string>payflow-e738d</string>
+	<key>STORAGE_BUCKET</key>
+	<string>payflow-e738d.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:282794492252:ios:e6523520594f4198f30199</string>
+</dict>
+</plist>
