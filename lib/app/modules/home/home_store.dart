@@ -4,6 +4,7 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:mobx/mobx.dart';
 import 'package:pay_flow_flutter/app/modules/home/services/home_service.dart';
 import 'package:pay_flow_flutter/app/shared/controllers/auth/auth_controller.dart';
+import 'package:pay_flow_flutter/app/shared/routes/app_routes.dart';
 import 'package:pay_flow_flutter/app/shared/utils/app_state.dart';
 
 part 'home_store.g.dart';
@@ -23,6 +24,8 @@ abstract class HomeStoreBase with Store {
   void setPage(int index) {
     currentPage = index;
   }
+
+  void goToBarcodeScannerPage() => Modular.to.pushNamed(AppRoutes.barcodescanner);
 
   Future<void> signOutWithGoogle() async {
     signOutState = AppState.LOADING;

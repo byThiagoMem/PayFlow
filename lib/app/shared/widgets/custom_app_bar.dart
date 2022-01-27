@@ -9,6 +9,7 @@ class CustomAppBar extends PreferredSize {
   final double size;
   final UserModel user;
   final bool isHome;
+
   CustomAppBar({Key? key, required this.size, required this.user, required this.isHome})
       : super(
           key: key,
@@ -42,7 +43,7 @@ class CustomAppBar extends PreferredSize {
                                 style: AppTheme.textStyles.heading20W,
                                 children: [
                                   TextSpan(
-                                    text: '${user.name}\n',
+                                    text: '${user.name.split(' ')[0]}\n',
                                     style: AppTheme.textStyles.heading20W.copyWith(fontWeight: FontWeight.bold),
                                   ),
                                   TextSpan(
@@ -90,10 +91,7 @@ class CustomAppBar extends PreferredSize {
                           child: SizedBox(
                             width: constraints.maxWidth * .88,
                             height: constraints.maxHeight * .38,
-                            child: AnimatedCard(
-                              direction: AnimatedCardDirection.top,
-                              child: const TicketsInfo(),
-                            ),
+                            child: AnimatedCard(direction: AnimatedCardDirection.top, child: const TicketsInfo()),
                           ),
                         ),
                       ],

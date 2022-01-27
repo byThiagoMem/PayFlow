@@ -27,6 +27,7 @@ class AppTheme {
   static const int _primaryValue = 0xFFFF941A;
 
   static void systemChromePreferences(Brightness statusBarIconBrightness) {
+    SystemChrome.setPreferredOrientations([DeviceOrientation.portraitDown, DeviceOrientation.portraitUp]);
     SystemChrome.setSystemUIOverlayStyle(
       SystemUiOverlayStyle(
         statusBarColor: Colors.transparent,
