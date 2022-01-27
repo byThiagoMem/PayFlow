@@ -16,7 +16,6 @@ class InsertTicketPageState extends State<InsertTicketPage> {
 
   @override
   void initState() {
-    print(widget.barcode.toString());
     super.initState();
   }
 
@@ -27,7 +26,7 @@ class InsertTicketPageState extends State<InsertTicketPage> {
         title: Text(widget.title),
       ),
       body: Column(
-        children: <Widget>[],
+        children: const <Widget>[],
       ),
     );
   }

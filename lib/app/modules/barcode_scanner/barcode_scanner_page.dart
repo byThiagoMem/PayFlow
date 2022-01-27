@@ -2,7 +2,7 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter/material.dart';
 import 'package:pay_flow_flutter/app/modules/barcode_scanner/models/barcode_scanner_status.dart';
 import 'package:pay_flow_flutter/app/modules/barcode_scanner/widgets/custom_bottom_sheet.dart';
-import 'package:pay_flow_flutter/app/modules/barcode_scanner/widgets/set_label_buttons.dart';
+import 'package:pay_flow_flutter/app/modules/barcode_scanner/widgets/label_button.dart';
 import 'package:pay_flow_flutter/app/shared/theme/app_theme.dart';
 
 import 'barcode_scanner_store.dart';
@@ -82,11 +82,12 @@ class BarcodeScannerPageState extends State<BarcodeScannerPage> {
                   ),
                 ],
               ),
-              bottomNavigationBar: SetLabelButtons(
-                primaryLabel: 'Inserir código do boleto',
-                primaryOnPressed: () {},
-                secundaryLabel: 'Adicionar da galeria',
-                secundaryOnPressed: () {},
+              bottomNavigationBar: Container(
+                color: AppTheme.colors.shapesBoxes,
+                child: LabelButton(
+                  label: 'Inserir código do boleto',
+                  onPressed: store.goToInsertTicketPage,
+                ),
               ),
             ),
           ),

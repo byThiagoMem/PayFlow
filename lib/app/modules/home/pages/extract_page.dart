@@ -26,7 +26,7 @@ class ExtractPage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const SizedBox(height: 20),
-                  'Meus boletos'.heading20(),
+                  'Meus extratos'.heading20(),
                   const SizedBox(height: 10),
                   const Divider(thickness: 1),
                   const SizedBox(height: 5),
