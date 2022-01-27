@@ -13,7 +13,7 @@ class CustomAppBar extends PreferredSize {
   CustomAppBar({Key? key, required this.size, required this.user, required this.isHome})
       : super(
           key: key,
-          preferredSize: Size(double.maxFinite, isHome ? size * .25 : size * .15),
+          preferredSize: Size(double.maxFinite, isHome ? size * .24 : size * .15),
           child: LayoutBuilder(
             builder: (context, constraints) {
               return Stack(

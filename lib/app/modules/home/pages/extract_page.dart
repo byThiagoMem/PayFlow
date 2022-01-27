@@ -25,8 +25,14 @@ class ExtractPage extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const SizedBox(height: 20),
-                  'Meus extratos'.heading20(),
+                  const SizedBox(height: 25),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      'Meus extratos'.heading20(),
+                      '3 pagos'.heading13(),
+                    ],
+                  ),
                   const SizedBox(height: 10),
                   const Divider(thickness: 1),
                   const SizedBox(height: 5),
