@@ -2,23 +2,58 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_masked_text2/flutter_masked_text2.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:mobx/mobx.dart';
+import 'package:pay_flow_flutter/app/shared/models/ticket_model.dart';
+import 'package:pay_flow_flutter/app/shared/repositories/auth/user_controller.dart';
 import 'package:pay_flow_flutter/app/shared/routes/app_routes.dart';
+import 'package:pay_flow_flutter/app/shared/services/ticket/ticket_service.dart';
+import 'package:pay_flow_flutter/app/shared/utils/app_state.dart';
 
 part 'insert_ticket_store.g.dart';
 
 class InsertTicketStore = _InsertTicketStoreBase with _$InsertTicketStore;
 
 abstract class _InsertTicketStoreBase with Store {
+  final _ticketService = Modular.get<TicketService>();
+  final _userController = Modular.get<UserController>();
+
   final nameTicketController = TextEditingController();
   final dueDateTicketController = MaskedTextController(mask: '##/##/##', translator: {"#": RegExp(r'[0-9]')});
   final valueTicketController = MoneyMaskedTextController(leftSymbol: 'R\$');
   final barcodeController = TextEditingController();
 
   @observable
+  AppState ticketState = AppState.IDLE;
+
+  @observable
   String formError = '';
 
-  void registerTicket() {
-    if (validateForms()) {}
+  void registerTicket() async {
+    if (validateForms()) {
+      await addNewTicket();
+    }
+  }
+
+  Future<void> addNewTicket() async {
+    ticketState = AppState.LOADING;
+    var user = _userController.user;
+    var ticket = TicketModel(
+      name: nameTicketController.text,
+      dueDate: dueDateTicketController.text,
+      value: valueTicketController.numberValue,
+      barcode: barcodeController.text,
+      paid: false,
+    );
+    try {
+      if (user != null) {
+        await _ticketService.addNewTicket(userId: user.uid, ticket: ticket);
+        ticketState = AppState.SUCCESS;
+        Modular.to.popUntil(ModalRoute.withName(AppRoutes.home));
+      } else {
+        ticketState = AppState.ERROR;
+      }
+    } catch (_) {
+      ticketState = AppState.ERROR;
+    }
   }
 
   @action

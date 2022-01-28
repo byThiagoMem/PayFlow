@@ -9,6 +9,21 @@ part of 'insert_ticket_store.dart';
 // ignore_for_file: non_constant_identifier_names, unnecessary_brace_in_string_interps, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic
 
 mixin _$InsertTicketStore on _InsertTicketStoreBase, Store {
+  final _$ticketStateAtom = Atom(name: '_InsertTicketStoreBase.ticketState');
+
+  @override
+  AppState get ticketState {
+    _$ticketStateAtom.reportRead();
+    return super.ticketState;
+  }
+
+  @override
+  set ticketState(AppState value) {
+    _$ticketStateAtom.reportWrite(value, super.ticketState, () {
+      super.ticketState = value;
+    });
+  }
+
   final _$formErrorAtom = Atom(name: '_InsertTicketStoreBase.formError');
 
   @override
@@ -85,6 +100,7 @@ mixin _$InsertTicketStore on _InsertTicketStoreBase, Store {
   @override
   String toString() {
     return '''
+ticketState: ${ticketState},
 formError: ${formError}
     ''';
   }

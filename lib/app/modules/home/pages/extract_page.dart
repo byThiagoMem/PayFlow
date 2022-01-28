@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:flutter_modular/flutter_modular.dart';
+import 'package:pay_flow_flutter/app/modules/home/home_store.dart';
 import 'package:pay_flow_flutter/app/modules/home/widgets/tickets_tiles.dart';
 import 'package:pay_flow_flutter/app/shared/extensions/app_text_styles.dart';
 import 'package:pay_flow_flutter/app/shared/models/user_model.dart';
@@ -10,6 +13,7 @@ class ExtractPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final store = Modular.get<HomeStore>();
     return LayoutBuilder(
       builder: (context, constraints) {
         return Scaffold(
@@ -22,23 +26,25 @@ class ExtractPage extends StatelessWidget {
             physics: const AlwaysScrollableScrollPhysics(),
             child: Padding(
               padding: EdgeInsets.symmetric(horizontal: constraints.maxWidth * .06),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const SizedBox(height: 25),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      'Meus extratos'.heading20(),
-                      '3 pagos'.heading13(),
-                    ],
-                  ),
-                  const SizedBox(height: 10),
-                  const Divider(thickness: 1),
-                  const SizedBox(height: 5),
-                  const TicketsTiles(),
-                ],
-              ),
+              child: Observer(builder: (_) {
+                return Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const SizedBox(height: 25),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        'Meus extratos'.heading20(),
+                        '${store.paidTickets.length} pagos'.heading13(),
+                      ],
+                    ),
+                    const SizedBox(height: 10),
+                    const Divider(thickness: 1),
+                    const SizedBox(height: 5),
+                    TicketsTiles(tickets: store.paidTickets),
+                  ],
+                );
+              }),
             ),
           ),
         );

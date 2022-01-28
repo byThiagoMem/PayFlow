@@ -10,8 +10,12 @@ class CustomAppBar extends PreferredSize {
   final UserModel user;
   final bool isHome;
 
-  CustomAppBar({Key? key, required this.size, required this.user, required this.isHome})
-      : super(
+  CustomAppBar({
+    Key? key,
+    required this.size,
+    required this.user,
+    required this.isHome,
+  }) : super(
           key: key,
           preferredSize: Size(double.maxFinite, isHome ? size * .24 : size * .15),
           child: LayoutBuilder(
@@ -91,7 +95,10 @@ class CustomAppBar extends PreferredSize {
                           child: SizedBox(
                             width: constraints.maxWidth * .88,
                             height: constraints.maxHeight * .38,
-                            child: AnimatedCard(direction: AnimatedCardDirection.top, child: const TicketsInfo()),
+                            child: AnimatedCard(
+                              direction: AnimatedCardDirection.top,
+                              child: const TicketsInfo(),
+                            ),
                           ),
                         ),
                       ],
