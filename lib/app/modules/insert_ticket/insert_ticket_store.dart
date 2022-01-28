@@ -37,6 +37,7 @@ abstract class _InsertTicketStoreBase with Store {
     ticketState = AppState.LOADING;
     var user = _userController.user;
     var ticket = TicketModel(
+      id: DateTime.now().microsecondsSinceEpoch.toString(),
       name: nameTicketController.text,
       dueDate: dueDateTicketController.text,
       value: valueTicketController.numberValue,

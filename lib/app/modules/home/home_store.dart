@@ -44,6 +44,24 @@ abstract class HomeStoreBase with Store {
     }
   }
 
+  Future<void> payTicket(TicketModel ticket) async {
+    User? user = _userController.user;
+    if (user != null) {
+      await _ticketService.updateTicket(userId: user.uid, ticket: ticket);
+      await getAllTickets();
+      Modular.to.pop();
+    }
+  }
+
+  Future<void> deleteTicket(TicketModel ticket) async {
+    User? user = _userController.user;
+    if (user != null) {
+      await _ticketService.deleteTicket(userId: user.uid, ticket: ticket);
+      await getAllTickets();
+      Modular.to.pop();
+    }
+  }
+
   @action
   Future<void> signOutWithGoogle() async {
     try {

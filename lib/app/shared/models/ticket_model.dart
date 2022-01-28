@@ -1,12 +1,14 @@
 import 'dart:convert';
 
 class TicketModel {
+  final String id;
   final String name;
   final String dueDate;
   final double value;
   final String barcode;
   final bool paid;
   TicketModel({
+    required this.id,
     required this.name,
     required this.dueDate,
     required this.value,
@@ -16,6 +18,7 @@ class TicketModel {
 
   Map<String, dynamic> toMap() {
     return {
+      'id': id,
       'name': name,
       'dueDate': dueDate,
       'value': value,
@@ -26,6 +29,7 @@ class TicketModel {
 
   factory TicketModel.fromMap(Map<String, dynamic> map) {
     return TicketModel(
+      id: map['id'] ?? '',
       name: map['name'] ?? '',
       dueDate: map['dueDate'] ?? '',
       value: map['value']?.toDouble() ?? 0.0,

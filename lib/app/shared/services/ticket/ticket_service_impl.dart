@@ -12,4 +12,10 @@ class TicketServiceImpl implements TicketService {
 
   @override
   Future<List<TicketModel>> getAllTickets({required String userId}) => _ticketRepository.getAllTickets(userId: userId);
+
+  @override
+  Future<void> deleteTicket({required String userId, required TicketModel ticket}) => _ticketRepository.deleteTicket(userId: userId, ticket: ticket);
+
+  @override
+  Future<void> updateTicket({required String userId, required TicketModel ticket}) => _ticketRepository.updateTicket(userId: userId, ticket: ticket);
 }

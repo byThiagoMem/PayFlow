@@ -48,7 +48,9 @@ class InsertTicketPageState extends State<InsertTicketPage> {
                         return Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Center(child: Text('Preencha os dados\ndo boleto', style: AppTheme.textStyles.heading20B, textAlign: TextAlign.center)),
+                            Center(
+                                child: Text('Preencha os dados\ndo boleto',
+                                    style: AppTheme.textStyles.heading20B.copyWith(fontWeight: FontWeight.w600), textAlign: TextAlign.center)),
                             SizedBox(height: constraints.maxHeight * .1),
                             CustomFormField(
                               hint: 'Nome do boleto',
