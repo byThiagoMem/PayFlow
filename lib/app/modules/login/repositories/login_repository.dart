@@ -1,3 +1,5 @@
+import 'package:pay_flow_flutter/app/shared/models/user_model.dart';
+
 abstract class LoginRepository {
-  Future<void> loginWithGoogle();
+  Future<UserModel?> loginWithGoogle();
 }

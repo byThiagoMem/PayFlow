@@ -42,7 +42,7 @@ class AppColorsDefault implements AppColors {
   Color get textInputs => const Color(0xFFB1B0B8);
 
   @override
-  Color get actionsDelete => const Color(0xFFE83F5B);
+  Color get actionsDelete => const Color(0xFFd40808);
 
   @override
   Color get shapesBoxes => const Color(0xFFFAFAFC);

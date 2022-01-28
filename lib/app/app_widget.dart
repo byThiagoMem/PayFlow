@@ -7,6 +7,7 @@ class AppWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    AppTheme.systemChromePreferences;
     return MaterialApp(
       title: 'Pay Flow',
       theme: AppTheme.theme,

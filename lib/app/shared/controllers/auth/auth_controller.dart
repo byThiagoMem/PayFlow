@@ -1,4 +1,4 @@
-import 'dart:developer';
+/* import 'dart:developer';
 
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:pay_flow_flutter/app/shared/controllers/auth/auth_constants.dart';
@@ -59,3 +59,4 @@ class AuthController {
     }
   }
 }
+ */

@@ -47,7 +47,7 @@ class CustomAppBar extends PreferredSize {
                                     style: AppTheme.textStyles.heading20W.copyWith(fontWeight: FontWeight.bold),
                                   ),
                                   TextSpan(
-                                    text: 'Mantenha seus contas em dia',
+                                    text: 'Mantenha suas contas em dia',
                                     style: AppTheme.textStyles.heading13.copyWith(
                                       color: AppTheme.colors.white,
                                     ),

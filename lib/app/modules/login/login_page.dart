@@ -23,14 +23,17 @@ class LoginPageState extends State<LoginPage> {
   void initState() {
     super.initState();
     _disposers ??= [
-      reaction((_) => store.loginState, (_) {
-        switch (store.loginState) {
-          case AppState.LOADING:
-            BasePage.showLoading(context);
-            break;
-          default:
-        }
-      }),
+      reaction(
+        (_) => store.loginState,
+        (_) {
+          switch (store.loginState) {
+            case AppState.LOADING:
+              BasePage.showLoading(context);
+              break;
+            default:
+          }
+        },
+      ),
     ];
   }
 
