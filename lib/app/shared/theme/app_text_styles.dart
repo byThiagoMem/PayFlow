@@ -18,7 +18,7 @@ class AppTextStylesDefault implements AppTextStyles {
   TextStyle get heading15 => GoogleFonts.inter(fontSize: 15, color: AppTheme.colors.black);
 
   @override
-  TextStyle get heading20B => GoogleFonts.lexend(fontSize: 20, fontWeight: FontWeight.w600, color: AppTheme.colors.black);
+  TextStyle get heading20B => GoogleFonts.lexend(fontSize: 20, fontWeight: FontWeight.w400, color: AppTheme.colors.textHeading);
 
   @override
   TextStyle get heading20W => GoogleFonts.lexend(fontSize: 20, fontWeight: FontWeight.w400, color: AppTheme.colors.white);

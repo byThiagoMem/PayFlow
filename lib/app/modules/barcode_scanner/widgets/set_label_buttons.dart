@@ -10,13 +10,15 @@ class SetLabelButtons extends StatelessWidget {
   final String secundaryLabel;
   final VoidCallback secundaryOnPressed;
   final bool enablePrimaryColor;
+  final bool enableSecundaryColor;
   const SetLabelButtons(
       {Key? key,
       required this.primaryLabel,
       required this.primaryOnPressed,
       required this.secundaryLabel,
       required this.secundaryOnPressed,
-      this.enablePrimaryColor = false})
+      this.enablePrimaryColor = false,
+      this.enableSecundaryColor = false})
       : super(key: key);
 
   @override
@@ -38,6 +40,7 @@ class SetLabelButtons extends StatelessWidget {
             child: LabelButton(
               label: secundaryLabel,
               onPressed: secundaryOnPressed,
+              style: enableSecundaryColor ? AppTheme.textStyles.heading15.copyWith(color: AppTheme.colors.brandPrimary) : null,
             ),
           ),
         ],

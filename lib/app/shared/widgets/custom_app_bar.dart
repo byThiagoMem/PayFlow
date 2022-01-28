@@ -10,8 +10,12 @@ class CustomAppBar extends PreferredSize {
   final UserModel user;
   final bool isHome;
 
-  CustomAppBar({Key? key, required this.size, required this.user, required this.isHome})
-      : super(
+  CustomAppBar({
+    Key? key,
+    required this.size,
+    required this.user,
+    required this.isHome,
+  }) : super(
           key: key,
           preferredSize: Size(double.maxFinite, isHome ? size * .24 : size * .15),
           child: LayoutBuilder(
@@ -47,7 +51,7 @@ class CustomAppBar extends PreferredSize {
                                     style: AppTheme.textStyles.heading20W.copyWith(fontWeight: FontWeight.bold),
                                   ),
                                   TextSpan(
-                                    text: 'Mantenha seus contas em dia',
+                                    text: 'Mantenha suas contas em dia',
                                     style: AppTheme.textStyles.heading13.copyWith(
                                       color: AppTheme.colors.white,
                                     ),
@@ -91,7 +95,10 @@ class CustomAppBar extends PreferredSize {
                           child: SizedBox(
                             width: constraints.maxWidth * .88,
                             height: constraints.maxHeight * .38,
-                            child: AnimatedCard(direction: AnimatedCardDirection.top, child: const TicketsInfo()),
+                            child: AnimatedCard(
+                              direction: AnimatedCardDirection.top,
+                              child: const TicketsInfo(),
+                            ),
                           ),
                         ),
                       ],

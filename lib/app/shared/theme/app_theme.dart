@@ -43,6 +43,10 @@ class AppTheme {
     brightness: Brightness.light,
     primarySwatch: color,
     primaryColor: color,
+    iconTheme: IconThemeData(color: AppTheme.colors.brandPrimary),
     scaffoldBackgroundColor: AppTheme.colors.white,
+    appBarTheme: AppBarTheme(
+      iconTheme: IconThemeData(color: AppTheme.colors.textInputs),
+    ),
   );
 }

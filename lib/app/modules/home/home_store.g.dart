@@ -39,6 +39,28 @@ mixin _$HomeStore on HomeStoreBase, Store {
     });
   }
 
+  final _$signOutWithGoogleAsyncAction =
+      AsyncAction('HomeStoreBase.signOutWithGoogle');
+
+  @override
+  Future<void> signOutWithGoogle() {
+    return _$signOutWithGoogleAsyncAction.run(() => super.signOutWithGoogle());
+  }
+
+  final _$HomeStoreBaseActionController =
+      ActionController(name: 'HomeStoreBase');
+
+  @override
+  void setPage(int index) {
+    final _$actionInfo = _$HomeStoreBaseActionController.startAction(
+        name: 'HomeStoreBase.setPage');
+    try {
+      return super.setPage(index);
+    } finally {
+      _$HomeStoreBaseActionController.endAction(_$actionInfo);
+    }
+  }
+
   @override
   String toString() {
     return '''

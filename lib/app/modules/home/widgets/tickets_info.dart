@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:pay_flow_flutter/app/shared/theme/app_theme.dart';
+
+import '../home_store.dart';
 
 class TicketsInfo extends StatelessWidget {
   const TicketsInfo({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final store = Modular.get<HomeStore>();
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 15),
       decoration: BoxDecoration(
@@ -22,22 +27,24 @@ class TicketsInfo extends StatelessWidget {
             height: 34,
           ),
           Container(width: 1, height: 32, color: AppTheme.colors.brandBackground),
-          Text.rich(
-            TextSpan(
-              text: 'Você tem ',
-              style: AppTheme.textStyles.heading13.copyWith(color: AppTheme.colors.white),
-              children: [
-                TextSpan(
-                  text: '14 boletos\n',
-                  style: AppTheme.textStyles.heading13.copyWith(fontWeight: FontWeight.bold, color: AppTheme.colors.white),
-                ),
-                TextSpan(
-                  text: 'cadastrados para pagar',
-                  style: AppTheme.textStyles.heading13.copyWith(color: AppTheme.colors.white),
-                ),
-              ],
-            ),
-          )
+          Observer(builder: (_) {
+            return Text.rich(
+              TextSpan(
+                text: 'Você tem ',
+                style: AppTheme.textStyles.heading13.copyWith(color: AppTheme.colors.white),
+                children: [
+                  TextSpan(
+                    text: '${store.unpaindTickets.length} boletos\n',
+                    style: AppTheme.textStyles.heading13.copyWith(fontWeight: FontWeight.bold, color: AppTheme.colors.white),
+                  ),
+                  TextSpan(
+                    text: 'cadastrados para pagar',
+                    style: AppTheme.textStyles.heading13.copyWith(color: AppTheme.colors.white),
+                  ),
+                ],
+              ),
+            );
+          })
         ],
       ),
     );
