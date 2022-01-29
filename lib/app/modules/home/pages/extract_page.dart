@@ -27,6 +27,7 @@ class ExtractPage extends StatelessWidget {
             child: Padding(
               padding: EdgeInsets.symmetric(horizontal: constraints.maxWidth * .06),
               child: Observer(builder: (_) {
+                String stringQuantityTicketspaids = store.paidTickets.length <= 1 ? 'pago' : 'pagos';
                 return Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -35,7 +36,7 @@ class ExtractPage extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         'Meus extratos'.heading20(),
-                        '${store.paidTickets.length} pagos'.heading13(),
+                        '${store.paidTickets.length} $stringQuantityTicketspaids'.heading13(),
                       ],
                     ),
                     const SizedBox(height: 10),

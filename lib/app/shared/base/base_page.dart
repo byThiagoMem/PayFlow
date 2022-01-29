@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:pay_flow_flutter/app/shared/extensions/formaters.dart';
 import 'package:pay_flow_flutter/app/shared/models/ticket_model.dart';
 import 'package:pay_flow_flutter/app/shared/theme/app_theme.dart';
 import 'package:pay_flow_flutter/app/shared/widgets/custom_button.dart';
@@ -44,10 +45,8 @@ class BasePage {
                       style: AppTheme.textStyles.heading20B.copyWith(fontWeight: FontWeight.w400),
                       children: [
                         TextSpan(text: '${ticket.name}\n', style: AppTheme.textStyles.heading20B.copyWith(fontWeight: FontWeight.w600)),
-                        TextSpan(text: 'no valor de R\$ ', style: AppTheme.textStyles.heading20B),
-                        TextSpan(
-                            text: '${ticket.value.toStringAsFixed(2)}\n',
-                            style: AppTheme.textStyles.heading20B.copyWith(fontWeight: FontWeight.w600)),
+                        TextSpan(text: 'no valor de ', style: AppTheme.textStyles.heading20B),
+                        TextSpan(text: '${ticket.value.reais()}\n', style: AppTheme.textStyles.heading20B.copyWith(fontWeight: FontWeight.w600)),
                         TextSpan(text: 'foi pago?', style: AppTheme.textStyles.heading20B),
                       ],
                     ),

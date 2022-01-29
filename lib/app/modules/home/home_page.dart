@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:mobx/mobx.dart';
 import 'package:pay_flow_flutter/app/modules/home/pages/extract_page.dart';
 import 'package:pay_flow_flutter/app/modules/home/pages/my_tickets_page.dart';
-import 'package:pay_flow_flutter/app/shared/base/base_page.dart';
 import 'package:pay_flow_flutter/app/shared/models/user_model.dart';
 import 'package:pay_flow_flutter/app/shared/theme/app_theme.dart';
-import 'package:pay_flow_flutter/app/shared/utils/app_state.dart';
 
 import 'home_store.dart';
 
@@ -21,23 +18,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends ModularState<HomePage, HomeStore> {
-  List<ReactionDisposer>? _disposers;
-
-  @override
-  void initState() {
-    super.initState();
-    _disposers ??= [
-      reaction((_) => store.signOutState, (_) {
-        switch (store.signOutState) {
-          case AppState.LOADING:
-            BasePage.showLoading(context);
-            break;
-          default:
-        }
-      }),
-    ];
-  }
-
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(

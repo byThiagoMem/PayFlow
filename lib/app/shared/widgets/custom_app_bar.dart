@@ -1,6 +1,5 @@
 import 'package:animated_card/animated_card.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:pay_flow_flutter/app/modules/home/widgets/tickets_info.dart';
 import 'package:pay_flow_flutter/app/shared/models/user_model.dart';
 import 'package:pay_flow_flutter/app/shared/theme/app_theme.dart';

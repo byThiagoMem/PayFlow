@@ -23,7 +23,7 @@ abstract class HomeStoreBase with Store {
   ObservableList<TicketModel> unpaindTickets = ObservableList<TicketModel>.of([]);
 
   @observable
-  AppState signOutState = AppState.IDLE;
+  AppState changeTicketsState = AppState.IDLE;
 
   @observable
   int currentPage = 0;
@@ -45,21 +45,33 @@ abstract class HomeStoreBase with Store {
   }
 
   Future<void> payTicket(TicketModel ticket) async {
-    User? user = _userController.user;
-    if (user != null) {
-      await _ticketService.updateTicket(userId: user.uid, ticket: ticket);
-      await getAllTickets();
-      Modular.to.pop();
+    changeTicketsState = AppState.LOADING;
+    try {
+      User? user = _userController.user;
+      if (user != null) {
+        await _ticketService.updateTicket(userId: user.uid, ticket: ticket);
+        await getAllTickets();
+      }
+      changeTicketsState = AppState.SUCCESS;
+    } catch (_) {
+      changeTicketsState = AppState.ERROR;
     }
+    changeTicketsState = AppState.IDLE;
   }
 
   Future<void> deleteTicket(TicketModel ticket) async {
-    User? user = _userController.user;
-    if (user != null) {
-      await _ticketService.deleteTicket(userId: user.uid, ticket: ticket);
-      await getAllTickets();
-      Modular.to.pop();
+    changeTicketsState = AppState.LOADING;
+    try {
+      User? user = _userController.user;
+      if (user != null) {
+        await _ticketService.deleteTicket(userId: user.uid, ticket: ticket);
+        await getAllTickets();
+      }
+      changeTicketsState = AppState.SUCCESS;
+    } catch (_) {
+      changeTicketsState = AppState.ERROR;
     }
+    changeTicketsState = AppState.IDLE;
   }
 
   @action

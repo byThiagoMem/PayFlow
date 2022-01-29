@@ -9,18 +9,19 @@ part of 'home_store.dart';
 // ignore_for_file: non_constant_identifier_names, unnecessary_brace_in_string_interps, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic
 
 mixin _$HomeStore on HomeStoreBase, Store {
-  final _$signOutStateAtom = Atom(name: 'HomeStoreBase.signOutState');
+  final _$changeTicketsStateAtom =
+      Atom(name: 'HomeStoreBase.changeTicketsState');
 
   @override
-  AppState get signOutState {
-    _$signOutStateAtom.reportRead();
-    return super.signOutState;
+  AppState get changeTicketsState {
+    _$changeTicketsStateAtom.reportRead();
+    return super.changeTicketsState;
   }
 
   @override
-  set signOutState(AppState value) {
-    _$signOutStateAtom.reportWrite(value, super.signOutState, () {
-      super.signOutState = value;
+  set changeTicketsState(AppState value) {
+    _$changeTicketsStateAtom.reportWrite(value, super.changeTicketsState, () {
+      super.changeTicketsState = value;
     });
   }
 
@@ -64,7 +65,7 @@ mixin _$HomeStore on HomeStoreBase, Store {
   @override
   String toString() {
     return '''
-signOutState: ${signOutState},
+changeTicketsState: ${changeTicketsState},
 currentPage: ${currentPage}
     ''';
   }

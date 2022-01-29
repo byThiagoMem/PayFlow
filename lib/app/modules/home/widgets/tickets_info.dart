@@ -11,6 +11,7 @@ class TicketsInfo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final store = Modular.get<HomeStore>();
+
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 15),
       decoration: BoxDecoration(
@@ -28,13 +29,14 @@ class TicketsInfo extends StatelessWidget {
           ),
           Container(width: 1, height: 32, color: AppTheme.colors.brandBackground),
           Observer(builder: (_) {
+            String stringQuantityTicketsPaids = store.unpaindTickets.length <= 1 ? 'boleto' : 'boletos';
             return Text.rich(
               TextSpan(
                 text: 'Você tem ',
                 style: AppTheme.textStyles.heading13.copyWith(color: AppTheme.colors.white),
                 children: [
                   TextSpan(
-                    text: '${store.unpaindTickets.length} boletos\n',
+                    text: '${store.unpaindTickets.length} $stringQuantityTicketsPaids \n',
                     style: AppTheme.textStyles.heading13.copyWith(fontWeight: FontWeight.bold, color: AppTheme.colors.white),
                   ),
                   TextSpan(

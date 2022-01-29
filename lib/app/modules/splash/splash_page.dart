@@ -1,4 +1,3 @@
-import 'package:flutter/services.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:pay_flow_flutter/app/modules/splash/splash_store.dart';
 import 'package:flutter/material.dart';
