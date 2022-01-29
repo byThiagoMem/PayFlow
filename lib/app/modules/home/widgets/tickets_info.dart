@@ -29,7 +29,7 @@ class TicketsInfo extends StatelessWidget {
           ),
           Container(width: 1, height: 32, color: AppTheme.colors.brandBackground),
           Observer(builder: (_) {
-            String stringQuantityTicketsPaids = store.unpaindTickets.length <= 1 ? 'boleto' : 'boletos';
+            String stringQuantityTicketsPaids = store.unpaindTickets.length == 1 ? 'boleto' : 'boletos';
             return Text.rich(
               TextSpan(
                 text: 'Você tem ',
