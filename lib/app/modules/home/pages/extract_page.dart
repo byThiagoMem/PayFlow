@@ -42,7 +42,7 @@ class ExtractPage extends StatelessWidget {
                     const SizedBox(height: 10),
                     const Divider(thickness: 1),
                     const SizedBox(height: 5),
-                    TicketsTiles(tickets: store.paidTickets),
+                    TicketsTiles(tickets: store.paidTickets, onTap: false),
                   ],
                 );
               }),

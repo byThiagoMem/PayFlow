@@ -12,7 +12,8 @@ import 'package:pay_flow_flutter/app/shared/utils/app_state.dart';
 
 class TicketsTiles extends StatefulWidget {
   final List<TicketModel> tickets;
-  const TicketsTiles({Key? key, required this.tickets}) : super(key: key);
+  final bool onTap;
+  const TicketsTiles({Key? key, required this.tickets, required this.onTap}) : super(key: key);
 
   @override
   State<TicketsTiles> createState() => _TicketsTilesState();
@@ -20,6 +21,7 @@ class TicketsTiles extends StatefulWidget {
 
 class _TicketsTilesState extends State<TicketsTiles> {
   final store = Modular.get<HomeStore>();
+
   List<ReactionDisposer>? _disposers;
 
   @override
@@ -43,21 +45,23 @@ class _TicketsTilesState extends State<TicketsTiles> {
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(
-      builder: (context, constraints) {
+      builder: (_, constraints) {
         return ListView.builder(
           itemBuilder: (_, index) {
             return InkWell(
               splashColor: AppTheme.colors.brandGradient,
               highlightColor: AppTheme.colors.brandGradient.withOpacity(.5),
               borderRadius: BorderRadius.circular(5),
-              onTap: () {
-                BasePage.showModal(
-                  context,
-                  ticket: widget.tickets[index],
-                  onTapYes: () async => await store.payTicket(widget.tickets[index]).then((_) => setState(() {})),
-                  onTapDelete: () async => await store.deleteTicket(widget.tickets[index]).then((_) => setState(() {})),
-                );
-              },
+              onTap: widget.onTap
+                  ? () {
+                      BasePage.showModal(
+                        context,
+                        ticket: widget.tickets[index],
+                        onTapYes: () async => await store.payTicket(widget.tickets[index]).then((_) => setState(() {})),
+                        onTapDelete: () async => await store.deleteTicket(widget.tickets[index]).then((_) => setState(() {})),
+                      );
+                    }
+                  : null,
               child: ListTile(
                 title: widget.tickets[index].name.heading17(),
                 subtitle: Text.rich(
